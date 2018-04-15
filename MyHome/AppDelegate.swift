@@ -7,16 +7,57 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    class var shared: AppDelegate {
+        return (UIApplication.shared.delegate as? AppDelegate) ?? AppDelegate()
+    }
 
     var window: UIWindow?
-
+    var viewModel: AppViewModel!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Localize.setCurrentLanguage("vi")
+        enableIQKeyboardManager()
+        
+        let window = UIWindow(frame: UIScreen.main.bounds).then {
+            $0.tintColor = UIColor.globalTint
+        }
+        self.window = window
+        bindViewModel()
+        
         return true
+    }
+    
+    private func bindViewModel() {
+        
+        guard let window = self.window else { return }
+        let navigator = AppNavigator(window: window,
+                                     useCaseProvider: UseCaseProvider())
+        let useCase = AppUseCase()
+        viewModel = AppViewModel(navigator: navigator, useCase: useCase)
+        
+        let input = AppViewModel.Input(
+            trigger: Driver.just(())
+        )
+        
+        let output = viewModel.transform(input)
+        
+        output.application
+            .drive()
+            .disposed(by: rx.disposeBag)
+    }
+    
+    private func enableIQKeyboardManager() {
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().previousNextDisplayMode = IQPreviousNextDisplayMode.Default
+        IQKeyboardManager.sharedManager().shouldShowToolbarPlaceholder = false
+        IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
+        IQKeyboardManager.sharedManager().toolbarDoneBarButtonItemText = "OK"
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

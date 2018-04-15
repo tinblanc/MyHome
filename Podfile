@@ -17,6 +17,10 @@ def pods
     pod 'MBProgressHUD', '~> 1.1'
     pod 'Localize-Swift', '~> 2.0'
     pod 'IQKeyboardManagerSwift'
+    
+    #
+    pod 'SwiftDate', '~> 4.5.0'
+    pod 'OrderedSet', '3.0'
 
 end
 
