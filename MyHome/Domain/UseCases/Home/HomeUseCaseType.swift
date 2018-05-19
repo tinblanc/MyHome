@@ -7,6 +7,6 @@
 //
 
 protocol HomeUseCaseType {
-
+    func getListRoom() -> Observable<[Room]>
 }
 

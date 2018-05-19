@@ -8,6 +8,7 @@
 
 protocol HomeNavigatorType {
     func toHome()
+    func toRoom(id: Int)
 }
 
 struct HomeNavigator: HomeNavigatorType {
@@ -19,5 +20,10 @@ struct HomeNavigator: HomeNavigatorType {
         let vm = HomeViewModel(navigator: self, useCase: useCaseProvider.makeHomeUseCase())
         vc.bindViewModel(to: vm)
         navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func toRoom(id: Int) {
+        // TODO: - Handle toRoom Here
+        print("Handle toRoom() here")
     }
 }
