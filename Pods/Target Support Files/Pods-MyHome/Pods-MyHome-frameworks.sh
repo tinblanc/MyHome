@@ -143,6 +143,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework"
@@ -151,14 +153,17 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/OrderedSet/OrderedSet.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Validator/Validator.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework"
@@ -167,12 +172,13 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/OrderedSet/OrderedSet.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Then/Then.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Validator/Validator.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

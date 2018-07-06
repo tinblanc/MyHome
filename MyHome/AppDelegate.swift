@@ -36,8 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func bindViewModel() {
         
         guard let window = self.window else { return }
-        let navigator = AppNavigator(window: window,
-                                     useCaseProvider: UseCaseProvider())
+        let navigator = AppNavigator(window: window)
         let useCase = AppUseCase()
         viewModel = AppViewModel(navigator: navigator, useCase: useCase)
         

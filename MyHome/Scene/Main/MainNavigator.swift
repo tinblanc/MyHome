@@ -23,11 +23,10 @@ protocol MainNavigatorType {
 
 struct MainNavigator: MainNavigatorType {
     
-    let useCaseProvider: UseCaseProviderType
     let window: UIWindow
     
     func toMain() {
-        let homeNav = BaseNavigationController().then {
+        let roomsNav = BaseNavigationController().then {
             $0.tabBarItem = UITabBarItem(title: "tab.home".localized(),
                                          image: #imageLiteral(resourceName: "tabbar_icon_home_off"),
                                          selectedImage: #imageLiteral(resourceName: "tabbar_icon_home_on"))
@@ -38,16 +37,13 @@ struct MainNavigator: MainNavigatorType {
         
         let mainTabBarController = MainTabBarController().then {
             $0.viewControllers = [
-                homeNav
+                roomsNav
             ]
         }
         window.rootViewController = mainTabBarController
         window.makeKeyAndVisible()
         
-        let homeNavigator = HomeNavigator(
-            navigationController: homeNav,
-            useCaseProvider: useCaseProvider
-        )
-        homeNavigator.toHome()
+        let roomsNavigator = RoomsNavigator( navigationController: roomsNav)
+        roomsNavigator.toRooms()
     }
 }
