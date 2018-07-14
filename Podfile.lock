@@ -1,6 +1,7 @@
 PODS:
   - ActionSheetPicker-3.0 (2.3.0)
   - Alamofire (4.7.2)
+  - AMPopTip (3.2.1)
   - Differentiator (3.0.2)
   - IQKeyboardManagerSwift (5.0.8)
   - Localize-Swift (2.0.0)
@@ -31,11 +32,13 @@ PODS:
   - SDWebImage (4.4.1):
     - SDWebImage/Core (= 4.4.1)
   - SDWebImage/Core (4.4.1)
+  - SnapKit (4.0.0)
   - Then (2.3.0)
   - Validator (3.0.2)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0 (~> 2.3)
+  - AMPopTip (~> 3.1)
   - IQKeyboardManagerSwift
   - Localize-Swift (~> 2.0)
   - MBProgressHUD (~> 1.1)
@@ -49,6 +52,7 @@ DEPENDENCIES:
   - RxDataSources (~> 3.0)
   - RxSwift (~> 4.1)
   - SDWebImage (~> 4.4)
+  - SnapKit
   - Then (~> 2.3)
   - Validator (~> 3.0.2)
 
@@ -56,6 +60,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ActionSheetPicker-3.0
     - Alamofire
+    - AMPopTip
     - Differentiator
     - IQKeyboardManagerSwift
     - Localize-Swift
@@ -70,12 +75,14 @@ SPEC REPOS:
     - RxDataSources
     - RxSwift
     - SDWebImage
+    - SnapKit
     - Then
     - Validator
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AMPopTip: 31251008f2c00cbc0a3d2b18520f277c5b5ab4da
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
   IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
   Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
@@ -90,9 +97,10 @@ SPEC CHECKSUMS:
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
   Validator: bf211c1d71b3f910d230c09c70e62429d0fef63a
 
-PODFILE CHECKSUM: a22ccd1edc6c093150c05d18ab87136964b7d796
+PODFILE CHECKSUM: e7d3ac1f77e207a7bead68898c63c760bc1b45a8
 
 COCOAPODS: 1.5.3

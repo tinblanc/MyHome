@@ -8,7 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		40AB9AFEC7DC0B3A32ED6EBB /* Pods_MyHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D459456384E658544EEBF35 /* Pods_MyHome.framework */; };
+		4507607820F63E5500AEF7BB /* ValidationTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507607720F63E5500AEF7BB /* ValidationTextView.swift */; };
+		4507607A20F640D600AEF7BB /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507607920F640D600AEF7BB /* UITextField+Ext.swift */; };
+		45204E8720F0E69F00E9CC8C /* RoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45204E8620F0E69F00E9CC8C /* RoomCell.xib */; };
+		45204E8A20F0EA9200E9CC8C /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45204E8920F0EA9200E9CC8C /* ShadowView.swift */; };
 		4532DB28208500370019F262 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532DB27208500370019F262 /* Room.swift */; };
+		4532F16C20FA38C000684B44 /* ValidationInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532F16B20FA38C000684B44 /* ValidationInput.swift */; };
+		4532F16F20FA3DBF00684B44 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532F16E20FA3DBF00684B44 /* ValidationError.swift */; };
+		4532F17120FA3EAF00684B44 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4532F17020FA3EAF00684B44 /* String+.swift */; };
+		454A6B6820F31D3F00474B7A /* RentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A6B6420F31D3F00474B7A /* RentViewController.swift */; };
+		454A6B6920F31D3F00474B7A /* RentNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A6B6520F31D3F00474B7A /* RentNavigator.swift */; };
+		454A6B6A20F31D3F00474B7A /* RentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A6B6620F31D3F00474B7A /* RentViewModel.swift */; };
+		454A6B6B20F31D3F00474B7A /* RentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A6B6720F31D3F00474B7A /* RentUseCase.swift */; };
+		454A6B7120F3771400474B7A /* AddRoomNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A6B6D20F3771400474B7A /* AddRoomNavigator.swift */; };
+		454A6B7220F3771400474B7A /* AddRoomUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A6B6E20F3771400474B7A /* AddRoomUseCase.swift */; };
+		454A6B7320F3771400474B7A /* AddRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A6B6F20F3771400474B7A /* AddRoomViewController.swift */; };
+		454A6B7420F3771400474B7A /* AddRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A6B7020F3771400474B7A /* AddRoomViewModel.swift */; };
 		4584CA472083592E00F32F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584CA462083592E00F32F55 /* AppDelegate.swift */; };
 		4584CA4C2083592E00F32F55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4584CA4A2083592E00F32F55 /* Main.storyboard */; };
 		4584CA4E2083593000F32F55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4584CA4D2083593000F32F55 /* Assets.xcassets */; };
@@ -77,7 +92,22 @@
 
 /* Begin PBXFileReference section */
 		0D459456384E658544EEBF35 /* Pods_MyHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4507607720F63E5500AEF7BB /* ValidationTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextView.swift; sourceTree = "<group>"; };
+		4507607920F640D600AEF7BB /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
+		45204E8620F0E69F00E9CC8C /* RoomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomCell.xib; sourceTree = "<group>"; };
+		45204E8920F0EA9200E9CC8C /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		4532DB27208500370019F262 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		4532F16B20FA38C000684B44 /* ValidationInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationInput.swift; sourceTree = "<group>"; };
+		4532F16E20FA3DBF00684B44 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		4532F17020FA3EAF00684B44 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		454A6B6420F31D3F00474B7A /* RentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentViewController.swift; sourceTree = "<group>"; };
+		454A6B6520F31D3F00474B7A /* RentNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentNavigator.swift; sourceTree = "<group>"; };
+		454A6B6620F31D3F00474B7A /* RentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentViewModel.swift; sourceTree = "<group>"; };
+		454A6B6720F31D3F00474B7A /* RentUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentUseCase.swift; sourceTree = "<group>"; };
+		454A6B6D20F3771400474B7A /* AddRoomNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRoomNavigator.swift; sourceTree = "<group>"; };
+		454A6B6E20F3771400474B7A /* AddRoomUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRoomUseCase.swift; sourceTree = "<group>"; };
+		454A6B6F20F3771400474B7A /* AddRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRoomViewController.swift; sourceTree = "<group>"; };
+		454A6B7020F3771400474B7A /* AddRoomViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRoomViewModel.swift; sourceTree = "<group>"; };
 		4584CA432083592E00F32F55 /* MyHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4584CA462083592E00F32F55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4584CA4B2083592E00F32F55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -177,6 +207,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		45204E8820F0EA7B00E9CC8C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				45204E8920F0EA9200E9CC8C /* ShadowView.swift */,
+				4507607720F63E5500AEF7BB /* ValidationTextView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4532F16D20FA396400684B44 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				4532F16B20FA38C000684B44 /* ValidationInput.swift */,
+				4532F16E20FA3DBF00684B44 /* ValidationError.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		454A6B6320F31CCB00474B7A /* Rent */ = {
+			isa = PBXGroup;
+			children = (
+				454A6B6420F31D3F00474B7A /* RentViewController.swift */,
+				454A6B6620F31D3F00474B7A /* RentViewModel.swift */,
+				454A6B6520F31D3F00474B7A /* RentNavigator.swift */,
+				454A6B6720F31D3F00474B7A /* RentUseCase.swift */,
+			);
+			path = Rent;
+			sourceTree = "<group>";
+		};
+		454A6B6C20F376FF00474B7A /* AddRoom */ = {
+			isa = PBXGroup;
+			children = (
+				454A6B6F20F3771400474B7A /* AddRoomViewController.swift */,
+				454A6B7020F3771400474B7A /* AddRoomViewModel.swift */,
+				454A6B6D20F3771400474B7A /* AddRoomNavigator.swift */,
+				454A6B6E20F3771400474B7A /* AddRoomUseCase.swift */,
+			);
+			path = AddRoom;
+			sourceTree = "<group>";
+		};
 		4584CA3A2083592E00F32F55 = {
 			isa = PBXGroup;
 			children = (
@@ -203,7 +273,6 @@
 				45AF39ED20EF51EA0016C7DF /* Support */,
 				45AF39E220EF4E140016C7DF /* Extensions */,
 				45AF399520EF455E0016C7DF /* Architecture */,
-				45AF399220EF44CA0016C7DF /* Extensions */,
 				4584CAAA2083AC1B00F32F55 /* Entities */,
 				45AF399120EF44C00016C7DF /* Services */,
 				4584CA742083594C00F32F55 /* Scene */,
@@ -232,6 +301,8 @@
 		4584CA742083594C00F32F55 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				454A6B6C20F376FF00474B7A /* AddRoom */,
+				454A6B6320F31CCB00474B7A /* Rent */,
 				45AF39D720EF469F0016C7DF /* Rooms */,
 				4584CAC42083B07500F32F55 /* Main */,
 				45AF399020EF43C40016C7DF /* App */,
@@ -281,13 +352,6 @@
 			children = (
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		45AF399220EF44CA0016C7DF /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		45AF399520EF455E0016C7DF /* Architecture */ = {
@@ -404,6 +468,8 @@
 				45AF39E420EF4E280016C7DF /* UIViewController+Rx.swift */,
 				45AF39E920EF51230016C7DF /* BaseNavigatorController.swift */,
 				45AF39EB20EF51790016C7DF /* UIColor+Additions.swift */,
+				4507607920F640D600AEF7BB /* UITextField+Ext.swift */,
+				4532F17020FA3EAF00684B44 /* String+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -411,6 +477,8 @@
 		45AF39ED20EF51EA0016C7DF /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				4532F16D20FA396400684B44 /* Validation */,
+				45204E8820F0EA7B00E9CC8C /* Common */,
 				45AF39EE20EF51F90016C7DF /* Constants.swift */,
 				45AF39F020EF5D270016C7DF /* Utilities.swift */,
 			);
@@ -421,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				45AF39F420EF5E960016C7DF /* RoomCell.swift */,
+				45204E8620F0E69F00E9CC8C /* RoomCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -534,6 +603,7 @@
 			files = (
 				4584CAD82083B84700F32F55 /* Localizable.strings in Resources */,
 				4584CA512083593000F32F55 /* LaunchScreen.storyboard in Resources */,
+				45204E8720F0E69F00E9CC8C /* RoomCell.xib in Resources */,
 				4584CA4E2083593000F32F55 /* Assets.xcassets in Resources */,
 				45AF39D120EF45B10016C7DF /* TableLoadingView.xib in Resources */,
 				4584CA4C2083592E00F32F55 /* Main.storyboard in Resources */,
@@ -559,6 +629,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyHome/Pods-MyHome-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AMPopTip/AMPopTip.framework",
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
@@ -574,11 +645,13 @@
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 				"${BUILT_PRODUCTS_DIR}/Validator/Validator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AMPopTip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
@@ -594,6 +667,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Validator.framework",
 			);
@@ -665,26 +739,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454A6B7120F3771400474B7A /* AddRoomNavigator.swift in Sources */,
+				454A6B6920F31D3F00474B7A /* RentNavigator.swift in Sources */,
 				45AF39C720EF45B10016C7DF /* APIErrorBase.swift in Sources */,
+				454A6B6B20F31D3F00474B7A /* RentUseCase.swift in Sources */,
+				454A6B6820F31D3F00474B7A /* RentViewController.swift in Sources */,
 				45AF39CE20EF45B10016C7DF /* Observable+.swift in Sources */,
 				4584CAC82083B12D00F32F55 /* MainTabBarController.swift in Sources */,
 				4584CAD32083B35C00F32F55 /* StoryBoards.swift in Sources */,
 				45AF39C120EF45B00016C7DF /* ErrorTracker.swift in Sources */,
+				454A6B6A20F31D3F00474B7A /* RentViewModel.swift in Sources */,
+				4532F17120FA3EAF00684B44 /* String+.swift in Sources */,
 				45AF39F820EF5E960016C7DF /* RoomsNavigator.swift in Sources */,
+				45204E8A20F0EA9200E9CC8C /* ShadowView.swift in Sources */,
+				454A6B7220F3771400474B7A /* AddRoomUseCase.swift in Sources */,
+				4532F16F20FA3DBF00684B44 /* ValidationError.swift in Sources */,
+				4507607A20F640D600AEF7BB /* UITextField+Ext.swift in Sources */,
 				45AF39EF20EF51F90016C7DF /* Constants.swift in Sources */,
 				45AF39CB20EF45B10016C7DF /* RxAlamofire+Multipart.swift in Sources */,
 				45AF39CF20EF45B10016C7DF /* DelegateTransporter.m in Sources */,
 				45AF39D320EF45B10016C7DF /* EmptyDataView.swift in Sources */,
 				45AF39D220EF45B10016C7DF /* LoadMoreTableView.swift in Sources */,
+				4507607820F63E5500AEF7BB /* ValidationTextView.swift in Sources */,
 				45AF39C920EF45B10016C7DF /* APIServiceBase.swift in Sources */,
 				4584CAC62083B08D00F32F55 /* MainNavigator.swift in Sources */,
 				45AF39C020EF45B00016C7DF /* BindableType.swift in Sources */,
+				454A6B7420F3771400474B7A /* AddRoomViewModel.swift in Sources */,
 				45AF39C520EF45B10016C7DF /* HasID.swift in Sources */,
 				45AF39D020EF45B10016C7DF /* BaseLoadMoreTableView.swift in Sources */,
 				45AF39F920EF5E960016C7DF /* RoomCell.swift in Sources */,
 				4584CAC32083B02B00F32F55 /* AppNavigator.swift in Sources */,
 				45AF39CA20EF45B10016C7DF /* CacheManager.swift in Sources */,
 				45AF39CC20EF45B10016C7DF /* String+Base64.swift in Sources */,
+				454A6B7320F3771400474B7A /* AddRoomViewController.swift in Sources */,
 				45AF39C220EF45B10016C7DF /* ViewModelType+Loadmore.swift in Sources */,
 				45AF39C620EF45B10016C7DF /* Page.swift in Sources */,
 				45AF39D620EF45B10016C7DF /* UIViewController+Debug.swift in Sources */,
@@ -697,6 +784,7 @@
 				4584CABB2083AF6800F32F55 /* AppViewModel.swift in Sources */,
 				45AF39E620EF4E280016C7DF /* UIViewController+Rx.swift in Sources */,
 				45AF39F120EF5D270016C7DF /* Utilities.swift in Sources */,
+				4532F16C20FA38C000684B44 /* ValidationInput.swift in Sources */,
 				45AF39CD20EF45B10016C7DF /* APIOutputBase.swift in Sources */,
 				45AF39C420EF45B10016C7DF /* ViewModelType.swift in Sources */,
 				45AF39E520EF4E280016C7DF /* UIViewController+.swift in Sources */,

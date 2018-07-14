@@ -6,5 +6,26 @@
   Copyright © 2018 Tin Blanc. All rights reserved.
 */
 
-// MARK: - Tabbar Title
+// MARK: - Common
+"common.cancel" = "Huỷ";
+"common.add" = "Tạo";
+"common.ok" = "OK";
+"common.success" = "Thành công !";
+
+// MARK: - Validation
+"validation.empty" = "Không để trống";
+"validation.requireField" = "Không để trống";
+
+// MARK: - Room
 "tab.home" = "Màn Hình Chính";
+"rooms.navigation.title" = "Quản Lý";
+"rooms.popup.button.lease.title" = "Cho Thuê";
+"rooms.popup.button.write.total.electricity.title" = "Ghi Số Điện";
+"rooms.popup.button.create.bill.title" = "Tạo Hoá Đơn";
+"rooms.popup.button.checkout.title" = "Trả phòng";
+
+// MARK: - Add Room
+"add.room.navigation.title" = "Tạo Phòng";
+"add.room.label.name.title" = "Tên Phòng";
+"add.room.label.price.title" = "Giá";
+"add.room.success" = "Tạo phòng thành công.";

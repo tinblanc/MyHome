@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         enableIQKeyboardManager()
         
         let window = UIWindow(frame: UIScreen.main.bounds).then {
-            $0.tintColor = UIColor.globalTint
+            $0.tintColor = UIColor.blueA
         }
         self.window = window
         bindViewModel()
