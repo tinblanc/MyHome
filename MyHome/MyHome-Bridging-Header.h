@@ -15,3 +15,4 @@
 @import ObjectMapper;
 
 @import Localize_Swift;
+@import SnapKit;

@@ -8,20 +8,26 @@
 
 import UIKit
 
-final class RoomCell: UITableViewCell, NibReusable {
-    @IBOutlet weak var userIdLabel: UILabel!
-    @IBOutlet weak var contractIdLabel: UILabel!
+final class RoomCell: UICollectionViewCell, NibReusable {
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var oldElectricityUsedLabel: UILabel!
-    @IBOutlet weak var newElectricityUsedLabel: UILabel!
-    @IBOutlet weak var isUseInternetLabel: UILabel!
-    @IBOutlet weak var isUseCleaningLabel: UILabel!
-    @IBOutlet weak var numberPeopleLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var dateOfPaymentLabel: UILabel!
+    @IBOutlet weak var containerView: ShadowView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        containerView.do {
+            $0.layer.cornerRadius = 5
+            $0.layer.borderWidth = 0.5
+            $0.layer.borderColor = UIColor(white: 205).cgColor
+            $0.shadowRadius = 3
+            $0.shadowOffsetWidth = 2
+            $0.shadowOffsetHeight = 2
+        }
+        
+        nameLabel.do {
+            $0.textColor = UIColor.white
+            $0.font = UIFont.boldSystemFont(ofSize: 15)
+        }
     }
 
     override func prepareForReuse() {
@@ -31,18 +37,13 @@ final class RoomCell: UITableViewCell, NibReusable {
 
     func configView(with model: RoomsViewModel.RoomModel?) {
         if let model = model {
-
+            nameLabel.text = model.room.name
+            
+            containerView.backgroundColor = model.room.userId.isEmpty
+                ? UIColor.pinkA
+                : UIColor.blueA
         } else {
-            userIdLabel.text = ""
-            contractIdLabel.text = ""
             nameLabel.text = ""
-            oldElectricityUsedLabel.text = ""
-            newElectricityUsedLabel.text = ""
-            isUseInternetLabel.text = ""
-            isUseCleaningLabel.text = ""
-            numberPeopleLabel.text = ""
-            priceLabel.text = ""
-            dateOfPaymentLabel.text = ""
         }
     }
 }

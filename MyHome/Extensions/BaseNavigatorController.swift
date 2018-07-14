@@ -14,11 +14,11 @@ class BaseNavigationController: UINavigationController {
         super.viewDidLoad()
         
         navigationBar.do {
-            $0.tintColor = UIColor.white
-            //            $0.barTintColor = UIColor.globalTint
+            $0.tintColor = UIColor.blueA
+            $0.barTintColor = UIColor.white
             $0.titleTextAttributes = [
-                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15),
-                NSAttributedStringKey.foregroundColor: UIColor.white
+                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17),
+                NSAttributedStringKey.foregroundColor: UIColor.black
             ]
             $0.isTranslucent = false
         }

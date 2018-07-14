@@ -13,6 +13,17 @@ extension UIViewController {
         present(ac, animated: true, completion: nil)
     }
     
+    func showMessage(title: String? = nil, message: String, completion: (() -> Void)? = nil) {
+        let ac = UIAlertController(title: title,
+                                   message: message,
+                                   preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "common.ok".localized(), style: .cancel) { _ in
+            completion?()
+        }
+        ac.addAction(okAction)
+        present(ac, animated: true, completion: nil)
+    }
+    
     func showAutoCloseMessage(image: UIImage?,
                               title: String?,
                               message: String?,
