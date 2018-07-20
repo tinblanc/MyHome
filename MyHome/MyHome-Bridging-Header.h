@@ -16,3 +16,5 @@
 
 @import Localize_Swift;
 @import SnapKit;
+@import SkyFloatingLabelTextField;
+@import BEMCheckBox;

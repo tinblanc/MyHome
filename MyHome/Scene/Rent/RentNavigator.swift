@@ -7,9 +7,13 @@
 //
 
 protocol RentNavigatorType {
-
+    func close()
 }
 
 struct RentNavigator: RentNavigatorType {
-
+    unowned let navigationController: UINavigationController
+    
+    func close() {
+        navigationController.dismiss(animated: true, completion: nil)
+    }
 }

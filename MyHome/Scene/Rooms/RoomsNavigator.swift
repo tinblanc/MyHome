@@ -100,7 +100,12 @@ struct RoomsNavigator: RoomsNavigatorType {
     }
     
     func toRent(room: Room) {
-        navigationController.showError(message: "\(#function) not implement !")
+        let vc = RentViewController.instantiate()
+        let baseNavigation = BaseNavigationController(rootViewController: vc)
+        let navigator = RentNavigator(navigationController: baseNavigation)
+        let vm = RentViewModel(navigator: navigator, useCase: RentUseCase())
+        vc.bindViewModel(to: vm)
+        navigationController.present(baseNavigation, animated: true, completion: nil)
     }
     
     func toWriteTotalElectric(room: Room) {

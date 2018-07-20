@@ -10,8 +10,6 @@ import UIKit
 import Reusable
 
 final class AddRoomViewController: UITableViewController, BindableType {
-    @IBOutlet weak var roomNameTitleLabel: UILabel!
-    @IBOutlet weak var priceTitleLabel: UILabel!
     
     @IBOutlet weak var roomNameTextField: ValidationTextField!
     @IBOutlet weak var priceTextField: ValidationTextField!
@@ -35,34 +33,18 @@ final class AddRoomViewController: UITableViewController, BindableType {
             $0.layer.cornerRadius = 6.0
             $0.setTitle("common.add".localized(), for: .normal)
             $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
-        }
-
-        // Label
-        roomNameTitleLabel.do {
-            $0.text = "add.room.label.name.title".localized()
-            $0.font = UIFont.systemFont(ofSize: 15.0)
-        }
-        priceTitleLabel.do {
-            $0.text = "add.room.label.price.title".localized()
-            $0.font = UIFont.systemFont(ofSize: 15.0)
+            $0.backgroundColor = UIColor.blueA
         }
         
         // TextField
         roomNameTextField.do {
             $0.placeholder = "add.room.label.name.title".localized()
+            $0.setup()
         }
         priceTextField.do {
             $0.placeholder = "add.room.label.price.title".localized()
+            $0.setup()
         }
-        
-        [roomNameTextField, priceTextField]
-            .compactMap { $0 }
-            .forEach { textField in
-                textField.setLeftPaddingPoints(15.0)
-                textField.layer.borderWidth = 0.5
-                textField.layer.borderColor = UIColor(white: 188).cgColor
-                textField.layer.cornerRadius = 6.0
-            }
     }
 
     deinit {

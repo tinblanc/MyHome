@@ -29,3 +29,18 @@
 "add.room.label.name.title" = "Tên Phòng";
 "add.room.label.price.title" = "Giá";
 "add.room.success" = "Tạo phòng thành công.";
+
+// MARK: - Rent Room
+"rent.room.navigation.title" = "Cho Thuê";
+"rent.room.button.rent.title" = "Thuê";
+
+"rent.room.label.name.title" = "Tên Phòng";
+"rent.room.label.price.title" = "Giá";
+"rent.room.label.old.electric.title" = "Số điện cũ";
+"rent.room.label.number.peoples.title" = "Số người";
+"rent.room.label.user.name.title" = "Tên người thuê";
+"rent.room.label.phone.number.title" = "Số điện thoại";
+"rent.room.label.deposits.title" = "Tiền đặt cọc";
+"rent.room.label.note.title" = "Ghi chú";
+"rent.room.label.start.date.title" = "Ngày bắt đầu";
+"rent.room.label.internet.title" = "Internet:";
