@@ -12,7 +12,6 @@ protocol AddRoomUseCaseType {
 
 struct AddRoomUseCase: AddRoomUseCaseType {
     func addRoom(name: String, price: Double) -> Observable<Void> {
-        // TODO: Handle Add Room
-        return Observable.just(())
+        return FirebaseHelper.shared.addRoom(name: name, price: price)
     }
 }

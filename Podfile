@@ -20,9 +20,23 @@ def pods
     pod 'OrderedSet', '3.0'
     pod 'ActionSheetPicker-3.0', '~> 2.3'
     
+    # Firebase
+    pod 'Firebase/Database'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
+    pod 'Firebase/Core'
+    
     #
     pod 'Localize-Swift', '~> 2.0'
     pod 'IQKeyboardManagerSwift'
+    pod 'SnapKit'
+    
+    #
+    pod 'AMPopTip', '~> 3.1'
+    
+    #
+    pod 'SkyFloatingLabelTextField'
+    pod 'BEMCheckBox'
     
 end
 

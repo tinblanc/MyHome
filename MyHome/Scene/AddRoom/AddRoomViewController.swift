@@ -67,6 +67,12 @@ final class AddRoomViewController: UITableViewController, BindableType {
         output.close
             .drive()
             .disposed(by: rx.disposeBag)
+        output.loading
+            .drive(rx.isLoading)
+            .disposed(by: rx.disposeBag)
+        output.error
+            .drive(rx.error)
+            .disposed(by: rx.disposeBag)
         
         // Validate
         output.nameValidate
