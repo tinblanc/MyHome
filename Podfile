@@ -23,14 +23,6 @@ def pods
     #
     pod 'Localize-Swift', '~> 2.0'
     pod 'IQKeyboardManagerSwift'
-    pod 'SnapKit'
-    
-    #
-    pod 'AMPopTip', '~> 3.1'
-    
-    #
-    pod 'SkyFloatingLabelTextField'
-    pod 'BEMCheckBox'
     
 end
 
