@@ -22,6 +22,7 @@ enum ValidationError: Error, CustomStringConvertible {
     case specialUsername
     case emptyTitle
     case requireField
+    case isNotNumber
     
     var description: String {
         switch self {
@@ -55,6 +56,9 @@ enum ValidationError: Error, CustomStringConvertible {
             return "validation.empty".localized()
         case .requireField:
             return "validation.requireField".localized()
+        case .isNotNumber:
+            return "validation.isNotNumber".localized()
         }
+        
     }
 }

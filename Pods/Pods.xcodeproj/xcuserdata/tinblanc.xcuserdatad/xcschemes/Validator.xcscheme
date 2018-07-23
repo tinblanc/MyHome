@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "84067933438594C831E14169274D6D3B"
+               BlueprintIdentifier = "567C0D2121391376F96825DE7B0C46AA"
                BlueprintName = "Validator"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Validator.framework">

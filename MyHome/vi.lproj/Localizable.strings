@@ -15,6 +15,7 @@
 // MARK: - Validation
 "validation.empty" = "Không để trống";
 "validation.requireField" = "Không để trống";
+"validation.isNotNumber" = "Chỉ nhập số";
 
 // MARK: - Room
 "tab.home" = "Màn Hình Chính";

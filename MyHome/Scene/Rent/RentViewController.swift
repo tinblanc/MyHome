@@ -64,8 +64,6 @@ final class RentViewController: UITableViewController, BindableType {
             $0.onFillColor = UIColor.blueA
             $0.onTintColor = UIColor.blueA
             $0.onCheckColor = UIColor.white
-            
-            $0.tintColor = UIColor.blueA
         }
         
         // TextField
@@ -137,11 +135,39 @@ final class RentViewController: UITableViewController, BindableType {
         
         let output = viewModel.transform(input)
         
-        output.added
+        // Trigger
+        output.submited
             .drive()
             .disposed(by: rx.disposeBag)
         output.close
             .drive()
+            .disposed(by: rx.disposeBag)
+        
+        // Validate
+        output.priceValidate
+            .drive(priceTextField.validationResult)
+            .disposed(by: rx.disposeBag)
+        output.oldElectricityValidate
+            .drive(oldElectricityTextField.validationResult)
+            .disposed(by: rx.disposeBag)
+        output.numberPeoplesValidate
+            .drive(numberPeoplesTextField.validationResult)
+            .disposed(by: rx.disposeBag)
+        output.userNameValidate
+            .drive(userNameTextField.validationResult)
+            .disposed(by: rx.disposeBag)
+        output.depositsValidate
+            .drive(depositsTextField.validationResult)
+            .disposed(by: rx.disposeBag)
+        output.startDateValidate
+            .drive(startDateTextField.validationResult)
+            .disposed(by: rx.disposeBag)
+        output.submitEnable
+            .drive(self.addButton.rx.isEnabled)
+            .disposed(by: rx.disposeBag)
+        output.submitEnable
+            .map { $0 ? 1.0 : 0.5 }
+            .drive(self.addButton.rx.alpha)
             .disposed(by: rx.disposeBag)
     }
 
