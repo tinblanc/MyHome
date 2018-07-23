@@ -39,7 +39,7 @@ class FirebaseHelper {
         return Observable.create({ (observer) -> Disposable in
             let ref = Database.database().reference()
             ref.child("rooms")
-                .child(userKey)
+                .child(self.userKey)
                 .observe(.value, with: { (snapshot) in
                     var rooms: [Room] = []
                     if let allObjects = snapshot.children.allObjects as? [DataSnapshot] {
@@ -62,14 +62,14 @@ class FirebaseHelper {
     // MARK: - Add Room
     func addRoom(name: String, price: Double) -> Observable<Void> {
         return Observable.create({ (observer) -> Disposable in
-            if !userKey.isEmpty && !name.isEmpty {
+            if !self.userKey.isEmpty && !name.isEmpty {
                 let ref = Database.database().reference()
                 let data: [String: Any] = [
                     "name": name,
                     "price": price
                 ]
                 ref.child("rooms")
-                    .child(userKey)
+                    .child(self.userKey)
                     .childByAutoId()
                     .setValue(data, withCompletionBlock: { (error, ref) in
                         if let err = error {

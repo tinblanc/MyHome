@@ -9,7 +9,7 @@
 import UIKit
 import AMPopTip
 
-final class ValidationTextField: UITextField {
+final class ValidationTextField: SkyFloatingLabelTextField {
     
     private var button: UIButton?
     private let popTip = PopTip()
@@ -48,6 +48,20 @@ final class ValidationTextField: UITextField {
     }
     
     func setup() {
+        let overcastBlueColor = UIColor.blueA
+        
+        self.do {
+            $0.textColor = UIColor.black //UIColor.darkGray
+            $0.lineColor = UIColor.lightGray
+            
+            $0.tintColor = overcastBlueColor
+            $0.selectedTitleColor = overcastBlueColor
+            $0.selectedLineColor = overcastBlueColor
+            
+            $0.lineHeight = 0.5 // bottom line height in points
+            $0.selectedLineHeight = 1.0
+        }
+        
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: buttonWidth, height: self.frame.height)).with {
             $0.setImage(#imageLiteral(resourceName: "input_error"), for: .normal)
             $0.addTarget(self, action: #selector(showPopTip), for: .touchUpInside)
@@ -57,7 +71,7 @@ final class ValidationTextField: UITextField {
         self.rightViewMode = .always
         self.button = button
         
-        self.setLeftPaddingPoints(leftPadding)
+        //self.setLeftPaddingPoints(leftPadding)
     }
     
     @objc func showPopTip() {

@@ -34,6 +34,10 @@ def pods
     #
     pod 'AMPopTip', '~> 3.1'
     
+    #
+    pod 'SkyFloatingLabelTextField'
+    pod 'BEMCheckBox'
+    
 end
 
 def test_pods

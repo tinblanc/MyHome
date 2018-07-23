@@ -85,6 +85,30 @@ class ValidationInput {
         
         return price.validate(rules: titleRules)
     }
+    
+    func numberValidate(value: String) -> ValidationResult {
+        var numberRules = ValidationRuleSet<String>()
+        
+        let emptyRule = ValidationRequireRule(
+            error: ValidationError.emptyTitle)
+        numberRules.add(rule: emptyRule)
+        
+        let numberRule = ValidationIsNumberRule(error: ValidationError.isNotNumber)
+        numberRules.add(rule: numberRule)
+        
+        return value.validate(rules: numberRules)
+    }
+    
+    func requireValidate(value: String) -> ValidationResult {
+        var titleRules = ValidationRuleSet<String>()
+        
+        let emptyRule = ValidationRequireRule(
+            error: ValidationError.emptyTitle)
+        titleRules.add(rule: emptyRule)
+        
+        return value.validate(rules: titleRules)
+    }
+    
 }
 
 // MARK: - ========== ValidationPasswordRule ==============
@@ -152,5 +176,18 @@ struct ValidationRequireRule: ValidationRule {
             return false
         }
         return true
+    }
+}
+
+struct ValidationIsNumberRule: ValidationRule {
+    typealias InputType = String
+    
+    var error: Error
+    
+    func validate(input: String?) -> Bool {
+        if let input = input {
+            return !input.isEmpty && input.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
+        }
+        return false
     }
 }

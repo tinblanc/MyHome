@@ -2,19 +2,20 @@ PODS:
   - ActionSheetPicker-3.0 (2.3.0)
   - Alamofire (4.7.2)
   - AMPopTip (3.2.1)
+  - BEMCheckBox (1.4.1)
   - Differentiator (3.0.2)
-  - Firebase/Auth (5.4.0):
+  - Firebase/Auth (5.2.0):
     - Firebase/CoreOnly
-    - FirebaseAuth (= 5.0.2)
-  - Firebase/Core (5.4.0):
+    - FirebaseAuth (= 5.0.1)
+  - Firebase/Core (5.2.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.0.1)
-  - Firebase/CoreOnly (5.4.0):
-    - FirebaseCore (= 5.0.5)
-  - Firebase/Database (5.4.0):
+  - Firebase/CoreOnly (5.2.0):
+    - FirebaseCore (= 5.0.3)
+  - Firebase/Database (5.2.0):
     - Firebase/CoreOnly
-    - FirebaseDatabase (= 5.0.2)
-  - Firebase/Storage (5.4.0):
+    - FirebaseDatabase (= 5.0.1)
+  - Firebase/Storage (5.2.0):
     - Firebase/CoreOnly
     - FirebaseStorage (= 3.0.0)
   - FirebaseAnalytics (5.0.1):
@@ -22,15 +23,15 @@ PODS:
     - FirebaseInstanceID (~> 3.0)
     - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - nanopb (~> 0.3)
-  - FirebaseAuth (5.0.2):
+  - FirebaseAuth (5.0.1):
     - FirebaseCore (~> 5.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (5.0.5):
+  - FirebaseCore (5.0.3):
     - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
-  - FirebaseDatabase (5.0.2):
+  - FirebaseDatabase (5.0.1):
     - FirebaseCore (~> 5.0)
     - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (3.1.1):
+  - FirebaseInstanceID (3.1.0):
     - FirebaseCore (~> 5.0)
   - FirebaseStorage (3.0.0):
     - FirebaseCore (~> 5.0)
@@ -74,6 +75,7 @@ PODS:
   - SDWebImage (4.4.1):
     - SDWebImage/Core (= 4.4.1)
   - SDWebImage/Core (4.4.1)
+  - SkyFloatingLabelTextField (3.5.1)
   - SnapKit (4.0.0)
   - Then (2.3.0)
   - Validator (3.0.2)
@@ -81,6 +83,7 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0 (~> 2.3)
   - AMPopTip (~> 3.1)
+  - BEMCheckBox
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -98,6 +101,7 @@ DEPENDENCIES:
   - RxDataSources (~> 3.0)
   - RxSwift (~> 4.1)
   - SDWebImage (~> 4.4)
+  - SkyFloatingLabelTextField
   - SnapKit
   - Then (~> 2.3)
   - Validator (~> 3.0.2)
@@ -107,6 +111,7 @@ SPEC REPOS:
     - ActionSheetPicker-3.0
     - Alamofire
     - AMPopTip
+    - BEMCheckBox
     - Differentiator
     - Firebase
     - FirebaseAnalytics
@@ -132,6 +137,7 @@ SPEC REPOS:
     - RxDataSources
     - RxSwift
     - SDWebImage
+    - SkyFloatingLabelTextField
     - SnapKit
     - Then
     - Validator
@@ -140,13 +146,14 @@ SPEC CHECKSUMS:
   ActionSheetPicker-3.0: eef157d75e151f255c5333d26656c7fbfe905a51
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   AMPopTip: 31251008f2c00cbc0a3d2b18520f277c5b5ab4da
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
-  Firebase: d66f4f29c23f22d96808d9abc174d81d8eee968f
+  Firebase: 25ed0412036d7d008568d1fb4d2e9d81ea8a0a2c
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
-  FirebaseAuth: 096e457cdd4274412a66c4a35874787e411f5a03
-  FirebaseCore: 42b3267233bd21a5abd54117ccc38ca3dd0f8e83
-  FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
-  FirebaseInstanceID: f3f0657372592ecdfdfe2cac604a5a75758376a6
+  FirebaseAuth: 463b8ce33bd5d05f706dcd4615499e3212b4132b
+  FirebaseCore: a3c87242451633fff8490183898075ce77d168d2
+  FirebaseDatabase: 482bad9c2abd422bb2321194fb8c937e67426a89
+  FirebaseInstanceID: 05d779cbb97bd5bd5c51a38a903fc9cfe1b2454a
   FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
@@ -165,10 +172,11 @@ SPEC CHECKSUMS:
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  SkyFloatingLabelTextField: 4cbeece9c3aae97c6019d8fae511cb5b755874f7
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
   Validator: bf211c1d71b3f910d230c09c70e62429d0fef63a
 
-PODFILE CHECKSUM: a44f4ce034e09a9540efc3bf07bee1011b744034
+PODFILE CHECKSUM: 858efb10643262e16f92bec98f0f2a9131d73eb5
 
 COCOAPODS: 1.5.3
