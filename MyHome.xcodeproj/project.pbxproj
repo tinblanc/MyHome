@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16F5543B2105ADF600B8EEE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16F5543A2105ADF600B8EEE7 /* GoogleService-Info.plist */; };
+		16F5543E2105B13C00B8EEE7 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F5543D2105B13C00B8EEE7 /* FirebaseHelper.swift */; };
 		40AB9AFEC7DC0B3A32ED6EBB /* Pods_MyHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D459456384E658544EEBF35 /* Pods_MyHome.framework */; };
 		4507607820F63E5500AEF7BB /* ValidationTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507607720F63E5500AEF7BB /* ValidationTextView.swift */; };
 		4507607A20F640D600AEF7BB /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4507607920F640D600AEF7BB /* UITextField+Ext.swift */; };
@@ -92,6 +94,8 @@
 
 /* Begin PBXFileReference section */
 		0D459456384E658544EEBF35 /* Pods_MyHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16F5543A2105ADF600B8EEE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		16F5543D2105B13C00B8EEE7 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		4507607720F63E5500AEF7BB /* ValidationTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTextView.swift; sourceTree = "<group>"; };
 		4507607920F640D600AEF7BB /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
 		45204E8620F0E69F00E9CC8C /* RoomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomCell.xib; sourceTree = "<group>"; };
@@ -207,6 +211,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		16F5543C2105B12A00B8EEE7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				16F5543D2105B13C00B8EEE7 /* FirebaseHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		45204E8820F0EA7B00E9CC8C /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +282,7 @@
 		4584CA452083592E00F32F55 /* MyHome */ = {
 			isa = PBXGroup;
 			children = (
+				16F5543C2105B12A00B8EEE7 /* Helper */,
 				45AF39ED20EF51EA0016C7DF /* Support */,
 				45AF39E220EF4E140016C7DF /* Extensions */,
 				45AF399520EF455E0016C7DF /* Architecture */,
@@ -283,6 +296,7 @@
 				4584CA522083593000F32F55 /* Info.plist */,
 				4584CA902083A4EE00F32F55 /* MyHome-Bridging-Header.h */,
 				4584CADA2083B84700F32F55 /* Localizable.strings */,
+				16F5543A2105ADF600B8EEE7 /* GoogleService-Info.plist */,
 			);
 			path = MyHome;
 			sourceTree = "<group>";
@@ -603,6 +617,7 @@
 			files = (
 				4584CAD82083B84700F32F55 /* Localizable.strings in Resources */,
 				4584CA512083593000F32F55 /* LaunchScreen.storyboard in Resources */,
+				16F5543B2105ADF600B8EEE7 /* GoogleService-Info.plist in Resources */,
 				45204E8720F0E69F00E9CC8C /* RoomCell.xib in Resources */,
 				4584CA4E2083593000F32F55 /* Assets.xcassets in Resources */,
 				45AF39D120EF45B10016C7DF /* TableLoadingView.xib in Resources */,
@@ -633,6 +648,8 @@
 				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
@@ -648,6 +665,8 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 				"${BUILT_PRODUCTS_DIR}/Validator/Validator.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -655,6 +674,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
@@ -670,6 +691,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Validator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -748,6 +771,7 @@
 				4584CAC82083B12D00F32F55 /* MainTabBarController.swift in Sources */,
 				4584CAD32083B35C00F32F55 /* StoryBoards.swift in Sources */,
 				45AF39C120EF45B00016C7DF /* ErrorTracker.swift in Sources */,
+				16F5543E2105B13C00B8EEE7 /* FirebaseHelper.swift in Sources */,
 				454A6B6A20F31D3F00474B7A /* RentViewModel.swift in Sources */,
 				4532F17120FA3EAF00684B44 /* String+.swift in Sources */,
 				45AF39F820EF5E960016C7DF /* RoomsNavigator.swift in Sources */,
