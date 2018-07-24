@@ -7,9 +7,11 @@
 //
 
 protocol RentUseCaseType {
-
+    func getRoomInfo(roomId: String) -> Observable<Room?>
 }
 
 struct RentUseCase: RentUseCaseType {
-
+    func getRoomInfo(roomId: String) -> Observable<Room?> {
+        return FirebaseHelper.shared.getRoomInfo(with: roomId)
+    }
 }

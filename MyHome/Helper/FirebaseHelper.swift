@@ -59,6 +59,33 @@ class FirebaseHelper {
         })
     }
     
+    // MARK: - Get Room Infomation
+    func getRoomInfo(with roomId: String) -> Observable<Room?> {
+        guard !roomId.isEmpty else {
+            return Observable.just(nil)
+        }
+        
+        return Observable.create({ (observer) -> Disposable in
+            let ref = Database.database().reference()
+            ref.child("rooms")
+                .child(self.userKey)
+                .child(roomId)
+                .observe(.value, with: { (snapshot) in
+                    if snapshot.exists() {
+                        if let rs = snapshot.value as? [String: Any],
+                            var room = Room(JSON: rs) {
+                            room.id = snapshot.key
+                            observer.onNext(room)
+                            observer.onCompleted()
+                        }
+                    }
+                }, withCancel: { (error) in
+                    observer.onError(error)
+                })
+            return Disposables.create()
+        })
+    }
+    
     // MARK: - Add Room
     func addRoom(name: String, price: Double) -> Observable<Void> {
         return Observable.create({ (observer) -> Disposable in

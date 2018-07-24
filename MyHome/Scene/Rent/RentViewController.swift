@@ -24,14 +24,17 @@ final class RentViewController: UITableViewController, BindableType {
     @IBOutlet weak var internetLabel: UILabel!
     @IBOutlet weak var internetCheckBox: BEMCheckBox!
 
-    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var closeButton: UIBarButtonItem!
     
-    // MARK: Subject Properties
+    // MARK: - Subject Properties
     fileprivate let internetCheckBoxTrigger = PublishSubject<Bool>()
 
     var viewModel: RentViewModel!
+    
+    // MARK: - Binding
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configView()
@@ -41,7 +44,7 @@ final class RentViewController: UITableViewController, BindableType {
         navigationItem.title = "rent.room.navigation.title".localized()
         
         // Button
-        addButton.do {
+        submitButton.do {
             $0.layer.cornerRadius = 6.0
             $0.setTitle("rent.room.button.rent.title".localized(), for: .normal)
             $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
@@ -72,10 +75,6 @@ final class RentViewController: UITableViewController, BindableType {
             $0.setup()
             $0.disabledColor = UIColor.blueA
             $0.isEnabled = false
-            
-            // TODO: Mock
-            $0.text = "Phòng 303"
-            
         }
         priceTextField.do {
             $0.placeholder = "rent.room.label.price.title".localized()
@@ -121,7 +120,8 @@ final class RentViewController: UITableViewController, BindableType {
     func bindViewModel() {
         
         let input = RentViewModel.Input(
-            addTrigger: addButton.rx.tap.asDriver(),
+            firstTrigger: Driver.just(()),
+            submitTrigger: submitButton.rx.tap.asDriver(),
             closeTrigger: closeButton.rx.tap.asDriver(),
             price: priceTextField.rx.text.orEmpty.asDriver(),
             oldElectricity: oldElectricityTextField.rx.text.orEmpty.asDriver(),
@@ -131,9 +131,27 @@ final class RentViewController: UITableViewController, BindableType {
             deposits: depositsTextField.rx.text.orEmpty.asDriver(),
             note: noteTextField.rx.text.orEmpty.asDriver(),
             startDate: startDateTextField.rx.text.orEmpty.asDriver(),
-            internet: internetCheckBoxTrigger.asDriverOnErrorJustComplete())
+            internet: internetCheckBoxTrigger.asDriverOnErrorJustComplete()
+        )
         
         let output = viewModel.transform(input)
+        
+        // Setup First Data
+        output.roomName
+            .drive(roomNameTextField.rx.text)
+            .disposed(by: rx.disposeBag)
+        
+        output.price
+            .drive(priceTextField.rx.text)
+            .disposed(by: rx.disposeBag)
+        
+        output.oldElectricity
+            .drive(oldElectricityTextField.rx.text)
+            .disposed(by: rx.disposeBag)
+        
+        output.startDate
+            .drive(startDateTextField.rx.text)
+            .disposed(by: rx.disposeBag)
         
         // Trigger
         output.submited
@@ -163,11 +181,11 @@ final class RentViewController: UITableViewController, BindableType {
             .drive(startDateTextField.validationResult)
             .disposed(by: rx.disposeBag)
         output.submitEnable
-            .drive(self.addButton.rx.isEnabled)
+            .drive(self.submitButton.rx.isEnabled)
             .disposed(by: rx.disposeBag)
         output.submitEnable
             .map { $0 ? 1.0 : 0.5 }
-            .drive(self.addButton.rx.alpha)
+            .drive(self.submitButton.rx.alpha)
             .disposed(by: rx.disposeBag)
     }
 

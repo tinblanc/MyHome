@@ -32,7 +32,11 @@ struct RoomsViewModel: ViewModelType {
     func transform(_ input: Input) -> Output {
         let errorTracker = ErrorTracker()
         let activityIndicator = ActivityIndicator()
+        
+        let loadError = errorTracker.asDriver()
+        let loading = activityIndicator.asDriver()
 
+        // Trigger
         let roomList = input.loadTrigger
             .flatMapLatest({ (_) in
                 self.useCase.getRoomList()
@@ -70,12 +74,9 @@ struct RoomsViewModel: ViewModelType {
                     print("Huỷ")
                 }
             })
-        
+
         let addRoom = input.addRoomTrigger
             .do(onNext: navigator.toAddRoom)
-        
-        let loadError = errorTracker.asDriver()
-        let loading = activityIndicator.asDriver()
 
         let isEmptyData = Driver.combineLatest(roomList, loading)
             .filter { !$0.1 }

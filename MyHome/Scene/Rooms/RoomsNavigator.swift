@@ -103,7 +103,7 @@ struct RoomsNavigator: RoomsNavigatorType {
         let vc = RentViewController.instantiate()
         let baseNavigation = BaseNavigationController(rootViewController: vc)
         let navigator = RentNavigator(navigationController: baseNavigation)
-        let vm = RentViewModel(navigator: navigator, useCase: RentUseCase())
+        let vm = RentViewModel(navigator: navigator, useCase: RentUseCase(), room: room)
         vc.bindViewModel(to: vm)
         navigationController.present(baseNavigation, animated: true, completion: nil)
     }

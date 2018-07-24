@@ -9,7 +9,8 @@
 struct RentViewModel: ViewModelType {
 
     struct Input {
-        let addTrigger: Driver<Void>
+        let firstTrigger: Driver<Void>
+        let submitTrigger: Driver<Void>
         let closeTrigger: Driver<Void>
         
         // Info
@@ -37,10 +38,16 @@ struct RentViewModel: ViewModelType {
         let userNameValidate: Driver<ValidationResult>
         let depositsValidate: Driver<ValidationResult>
         let startDateValidate: Driver<ValidationResult>
+        
+        let roomName: Driver<String>
+        let price: Driver<String>
+        let oldElectricity: Driver<String>
+        let startDate: Driver<String>
     }
 
     let navigator: RentNavigatorType
     let useCase: RentUseCaseType
+    let room: Room
 
     func transform(_ input: Input) -> Output {
         let activityIndicator = ActivityIndicator()
@@ -48,6 +55,19 @@ struct RentViewModel: ViewModelType {
         
         let loading = activityIndicator.asDriver()
         let error = errorTracker.asDriver()
+        
+        // Bind Data
+        let roomName = input.firstTrigger
+            .map { self.room.name }
+        
+        let price = input.firstTrigger
+            .map { String(format: "%d", self.room.price) }
+        
+        let oldElectricity = input.firstTrigger
+            .map { String(format: "%d", self.room.oldElectricityUsed) }
+        
+        let startDate = input.firstTrigger
+            .map { Date().toDate() }
         
         // Validate
         let priceValidate = input.price
@@ -86,12 +106,19 @@ struct RentViewModel: ViewModelType {
         }
         
         // Trigger
+        let submited = input.submitTrigger
+            .withLatestFrom(input.startDate)
+            .do(onNext: { (startDate) in
+                print(startDate)
+            })
+            .mapToVoid()
+        
         let closed = input.closeTrigger
             .do(onNext: navigator.close)
         
         return Output(loading: loading,
                       error: error,
-                      submited: Driver.empty(),
+                      submited: submited,
                       close: closed,
                       submitEnable: submitEnable,
                       priceValidate: priceValidate,
@@ -99,6 +126,10 @@ struct RentViewModel: ViewModelType {
                       numberPeoplesValidate: numberPeoplesValidate,
                       userNameValidate: userNameValidate,
                       depositsValidate: depositsValidate,
-                      startDateValidate: startDateValidate)
+                      startDateValidate: startDateValidate,
+                      roomName: roomName,
+                      price: price,
+                      oldElectricity: oldElectricity,
+                      startDate: startDate)
     }
 }

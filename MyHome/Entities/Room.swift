@@ -19,7 +19,7 @@ struct Room {
     var isUseInternet: Bool
     var isUseCleaning: Bool
     var numberPeople: Int
-    var price: Double
+    var price: Int
     var dateOfPayment: Date?
 }
 
@@ -35,7 +35,7 @@ extension Room {
             isUseInternet: false,
             isUseCleaning: true,
             numberPeople: 1,
-            price: 0.0,
+            price: 0,
             dateOfPayment: nil
         )
     }
