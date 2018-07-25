@@ -28,7 +28,7 @@ final class RentViewController: UITableViewController, BindableType {
     @IBOutlet weak var closeButton: UIBarButtonItem!
     
     // MARK: - Subject Properties
-    fileprivate let internetCheckBoxTrigger = PublishSubject<Bool>()
+    fileprivate let internetCheckBoxTrigger = BehaviorSubject<Bool>(value: false)
 
     var viewModel: RentViewModel!
     
@@ -110,6 +110,9 @@ final class RentViewController: UITableViewController, BindableType {
             $0.setup()
         }
         
+        internetCheckBox.do {
+            $0.delegate = self
+        }
     }
 
     deinit {
@@ -174,6 +177,9 @@ final class RentViewController: UITableViewController, BindableType {
         output.userNameValidate
             .drive(userNameTextField.validationResult)
             .disposed(by: rx.disposeBag)
+        output.phoneNumberValidate
+            .drive(phoneNumberTextField.validationResult)
+            .disposed(by: rx.disposeBag)
         output.depositsValidate
             .drive(depositsTextField.validationResult)
             .disposed(by: rx.disposeBag)
@@ -212,7 +218,6 @@ extension RentViewController: StoryboardSceneBased {
 // MARK: BEMCheckBoxDelegate
 extension RentViewController: BEMCheckBoxDelegate {
     func didTap(_ checkBox: BEMCheckBox) {
-        print(checkBox.on)
         internetCheckBoxTrigger.onNext(checkBox.on)
     }
 }

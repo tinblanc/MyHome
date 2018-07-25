@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1602C17F210852E500185C48 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602C17E210852E500185C48 /* User.swift */; };
 		16EFD1C62101DD3700BD0194 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EFD1C52101DD3700BD0194 /* Date+.swift */; };
 		16F5543B2105ADF600B8EEE7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16F5543A2105ADF600B8EEE7 /* GoogleService-Info.plist */; };
 		16F5543E2105B13C00B8EEE7 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F5543D2105B13C00B8EEE7 /* FirebaseHelper.swift */; };
@@ -95,6 +96,7 @@
 
 /* Begin PBXFileReference section */
 		0D459456384E658544EEBF35 /* Pods_MyHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1602C17E210852E500185C48 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		16EFD1C52101DD3700BD0194 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		16F5543A2105ADF600B8EEE7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		16F5543D2105B13C00B8EEE7 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				4532DB27208500370019F262 /* Room.swift */,
+				1602C17E210852E500185C48 /* User.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -825,6 +828,7 @@
 				4532DB28208500370019F262 /* Room.swift in Sources */,
 				45AF39EC20EF51790016C7DF /* UIColor+Additions.swift in Sources */,
 				45AF39F720EF5E960016C7DF /* RoomsViewModel.swift in Sources */,
+				1602C17F210852E500185C48 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

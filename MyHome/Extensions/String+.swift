@@ -40,3 +40,9 @@ extension String {
         return NSURL(fileURLWithPath: self).pathExtension ?? ""
     }
 }
+
+extension String {
+    func toDate () -> Date? {
+        return DateFormatter.Format.date.instance.date(from: self)
+    }
+}

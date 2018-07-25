@@ -45,7 +45,7 @@ struct RoomsNavigator: RoomsNavigatorType {
                     : .actionSheet
             )
             
-            if room.userId.isEmpty {
+            if room.renterId.isEmpty {
                 // Chưa có người thuê
                 let leaseAction = UIAlertAction(
                     title: "rooms.popup.button.lease.title".localized(),

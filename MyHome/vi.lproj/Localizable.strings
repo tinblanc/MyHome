@@ -34,6 +34,7 @@
 // MARK: - Rent Room
 "rent.room.navigation.title" = "Cho Thuê";
 "rent.room.button.rent.title" = "Thuê";
+"rent.room.success.message" = "Cho Thuê Thành Công.";
 
 "rent.room.label.name.title" = "Tên Phòng";
 "rent.room.label.price.title" = "Giá";

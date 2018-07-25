@@ -111,4 +111,50 @@ class FirebaseHelper {
             return Disposables.create()
         })
     }
+    
+    // MARK: - Rent Room
+    func rentRoom(room: Room, user: User) -> Observable<Void> {
+        return Observable.create({ (observer) -> Disposable in
+            let userRef = Database.database().reference()
+            let userData: [String: Any] = [
+                "name": user.name,
+                "phoneNumber": user.phoneNumber
+            ]
+            
+            // Add User
+            userRef.child("users")
+                .childByAutoId()
+                .setValue(userData, withCompletionBlock: { (error, refA) in
+                    if let err = error {
+                        observer.onError(err)
+                    }
+                    let roomData: [String: Any] = [
+                        "price": room.price,
+                        "oldElectricityUsed": room.oldElectricityUsed,
+                        "numberPeoples": room.numberPeoples,
+                        "deposits": room.deposits,
+                        "note": room.note,
+                        "startDate": room.startDate ?? "",
+                        "isUseInternet": room.isUseInternet,
+                        "renterId": refA.key
+                    ]
+                    
+                    // Update Room Info
+                    let roomRef = Database.database().reference()
+                    roomRef.child("rooms")
+                        .child(self.userKey)
+                        .child(room.id)
+                        .updateChildValues(roomData, withCompletionBlock: { (error, refB) in
+                            if let err = error {
+                                observer.onError(err)
+                            }
+                            
+                            observer.onNext(())
+                            observer.onCompleted()
+                        })
+                    
+                })
+            return Disposables.create()
+        })
+    }
 }

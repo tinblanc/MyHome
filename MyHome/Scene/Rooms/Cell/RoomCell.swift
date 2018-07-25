@@ -38,11 +38,11 @@ final class RoomCell: UICollectionViewCell, NibReusable {
     func configView(with model: RoomsViewModel.RoomModel?) {
         if let model = model {
             nameLabel.text = model.room.name
-            nameLabel.textColor = model.room.userId.isEmpty
+            nameLabel.textColor = model.room.renterId.isEmpty
                 ? UIColor.darkGray.withAlphaComponent(0.7)
                 : UIColor.white
             
-            containerView.backgroundColor = model.room.userId.isEmpty
+            containerView.backgroundColor = model.room.renterId.isEmpty
                 ? UIColor.white
                 : UIColor.blueA
         } else {

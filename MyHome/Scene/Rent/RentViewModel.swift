@@ -36,9 +36,11 @@ struct RentViewModel: ViewModelType {
         let oldElectricityValidate: Driver<ValidationResult>
         let numberPeoplesValidate: Driver<ValidationResult>
         let userNameValidate: Driver<ValidationResult>
+        let phoneNumberValidate: Driver<ValidationResult>
         let depositsValidate: Driver<ValidationResult>
         let startDateValidate: Driver<ValidationResult>
         
+        // For setup Data
         let roomName: Driver<String>
         let price: Driver<String>
         let oldElectricity: Driver<String>
@@ -47,7 +49,7 @@ struct RentViewModel: ViewModelType {
 
     let navigator: RentNavigatorType
     let useCase: RentUseCaseType
-    let room: Room
+    var room: Room
 
     func transform(_ input: Input) -> Output {
         let activityIndicator = ActivityIndicator()
@@ -56,7 +58,7 @@ struct RentViewModel: ViewModelType {
         let loading = activityIndicator.asDriver()
         let error = errorTracker.asDriver()
         
-        // Bind Data
+        // Setup First Data
         let roomName = input.firstTrigger
             .map { self.room.name }
         
@@ -82,6 +84,9 @@ struct RentViewModel: ViewModelType {
         let userNameValidate = input.userName
             .map { ValidationInput.shared.nameValidate(name: $0) }
         
+        let phoneNumberValidate = input.phoneNumber
+            .map { ValidationInput.shared.numberValidate(value: $0) }
+        
         let depositsValidate = input.deposits
             .map { ValidationInput.shared.numberValidate(value: $0) }
         
@@ -92,26 +97,75 @@ struct RentViewModel: ViewModelType {
                                                 oldElectricityValidate,
                                                 numberPeoplesValidate,
                                                 userNameValidate,
+                                                phoneNumberValidate,
                                                 depositsValidate,
                                                 startDateValidate)
             .map { (arg) -> Bool in
-                let (priceValidate, oldElectricityValidate, numberPeoplesValidate, userNameValidate, depositsValidate, startDateValidate) = arg
+                let (priceValidate, oldElectricityValidate, numberPeoplesValidate, userNameValidate, phoneNumberValidate, depositsValidate, startDateValidate) = arg
                 return priceValidate.isValid
                     && oldElectricityValidate.isValid
                     && numberPeoplesValidate.isValid
                     && userNameValidate.isValid
+                    && phoneNumberValidate.isValid
                     && depositsValidate.isValid
                     && startDateValidate.isValid
                 
         }
         
         // Trigger
+        let inputCombineA = Driver.combineLatest(
+            input.price,
+            input.oldElectricity,
+            input.numberPeoples,
+            input.userName,
+            input.phoneNumber,
+            input.deposits,
+            input.note
+        )
+        
+        let inputCombineB = Driver.combineLatest(
+            input.startDate,
+            input.internet
+        )
+        
         let submited = input.submitTrigger
-            .withLatestFrom(input.startDate)
-            .do(onNext: { (startDate) in
-                print(startDate)
+            .withLatestFrom(Driver.combineLatest(inputCombineA, inputCombineB) )
+            .flatMapLatest({ arg -> Driver<Void> in
+                let (arg1, arg2) = arg
+                let (price, oldElectricity, numberPeoples, userName, phoneNumber, deposits, note) = arg1
+                let (startDate, internet) = arg2
+                
+                if let price = Int(price),
+                    let oldElectricity = Int(oldElectricity),
+                    let numberPeoples = Int(numberPeoples),
+                    let deposits = Int(deposits) {
+                    // Create Room
+                    let room = Room().with {
+                        $0.id = self.room.id
+                        $0.price = price
+                        $0.oldElectricityUsed = oldElectricity
+                        $0.numberPeoples = numberPeoples
+                        $0.deposits = deposits
+                        $0.note = note
+                        $0.startDate = startDate
+                        $0.isUseInternet = internet
+                    }
+                    // Create User
+                    let user = User().with {
+                        $0.name = userName
+                        $0.phoneNumber = phoneNumber
+                    }
+                    
+                    return self.useCase.rent(room: room, user: user)
+                        .trackError(errorTracker)
+                        .trackActivity(activityIndicator)
+                        .asDriverOnErrorJustComplete()
+                }
+
+                return Driver.empty()
             })
             .mapToVoid()
+            .do(onNext: navigator.showAlertSuccess)
         
         let closed = input.closeTrigger
             .do(onNext: navigator.close)
@@ -125,6 +179,7 @@ struct RentViewModel: ViewModelType {
                       oldElectricityValidate: oldElectricityValidate,
                       numberPeoplesValidate: numberPeoplesValidate,
                       userNameValidate: userNameValidate,
+                      phoneNumberValidate: phoneNumberValidate,
                       depositsValidate: depositsValidate,
                       startDateValidate: startDateValidate,
                       roomName: roomName,

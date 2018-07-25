@@ -16,8 +16,13 @@ struct AddRoomNavigator: AddRoomNavigatorType {
     
     func showAlertSuccess() {
         navigationController.view.endEditing(true)
-        navigationController.showMessage(title: "common.success".localized(), message: "add.room.success".localized()) {
-            self.close()
+        
+        navigationController.showAutoCloseMessage(
+            image: nil,
+            title: "common.success".localized(),
+            message: "add.room.success".localized(),
+            interval: 1.0) {
+                self.close()
         }
     }
     
